@@ -32,13 +32,10 @@ jobs:
       - run: yarn install
       - run: yarn build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+      - name: Test
+        run: |
+          CI=1 npm run test
 
       - name: Deploy
         run: |
-          npm deploy 
+          npm run deploy
