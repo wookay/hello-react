@@ -37,5 +37,7 @@ jobs:
           CI=1 npm run test
 
       - name: Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run deploy
