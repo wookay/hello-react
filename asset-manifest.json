@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/hello-react/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/hello-react/static/js/main.bdd3b476.chunk.js",
+    "main.js.map": "/hello-react/static/js/main.bdd3b476.chunk.js.map",
+    "runtime-main.js": "/hello-react/static/js/runtime-main.1110dc2c.js",
+    "runtime-main.js.map": "/hello-react/static/js/runtime-main.1110dc2c.js.map",
+    "static/js/2.28d688f1.chunk.js": "/hello-react/static/js/2.28d688f1.chunk.js",
+    "static/js/2.28d688f1.chunk.js.map": "/hello-react/static/js/2.28d688f1.chunk.js.map",
+    "static/js/3.fe9a99b9.chunk.js": "/hello-react/static/js/3.fe9a99b9.chunk.js",
+    "static/js/3.fe9a99b9.chunk.js.map": "/hello-react/static/js/3.fe9a99b9.chunk.js.map",
+    "index.html": "/hello-react/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/hello-react/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.28d688f1.chunk.js.LICENSE.txt": "/hello-react/static/js/2.28d688f1.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/hello-react/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1110dc2c.js",
+    "static/js/2.28d688f1.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.bdd3b476.chunk.js"
+  ]
+}
