@@ -52,7 +52,5 @@ jobs:
     - name: Deploy
       run: |
         npm run deploy
-        git config --global user.name ${{ secrets.USER_NAME }}
-        git config --global user.email ${{ secrets.USER_EMAIL }}
-        git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/wookay/hello-github
+        git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/wookay/hello-react
         npm run deploy
