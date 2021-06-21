@@ -1,4 +1,4 @@
-name: github pages
+name: ci
 
 on:
   push:
@@ -34,4 +34,4 @@ jobs:
 
       - name: Test
         run: |
-          CI=1 npm run test
+          CI=1 npm run test -- --colors
