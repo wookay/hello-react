@@ -1,6 +1,7 @@
 import { render, screen} from '@testing-library/react';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
+import App from './App';
 
 function Button(props) {
   return <button>Nothing to do for now</button>;
@@ -8,19 +9,19 @@ function Button(props) {
 
 describe('describe renders', function() {
   it('renders learn react link', () => {
-    render(<App />);
+    render(<BrowserRouter><App /></BrowserRouter>);
     const linkElement = screen.getByText(/learn react/i);
     expect(linkElement).toBeInTheDocument();
   });
 
   it('renders 하더놈', () => {
-    render(<App />);
+    render(<BrowserRouter><App /></BrowserRouter>);
     const p = screen.getByText("하더놈", { exact: false });
     expect(p).toBeInTheDocument();
   });
 
   it('unmount', () => {
-    const { container, unmount } = render(<App />);
+    const { container, unmount } = render(<BrowserRouter><App /></BrowserRouter>);
     unmount();
     var got_error = false
     try {
