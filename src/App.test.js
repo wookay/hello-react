@@ -6,7 +6,7 @@ import App from './App';
 
 function Button(props) {
   // console.log("props: ", props); // props:  { a: 1 }
-  return <button>Nothing to do for now</button>;
+  return <button {...props}>Nothing to do for now</button>;
 }
 
 describe('describe renders', function() {
@@ -38,7 +38,7 @@ describe('describe renders', function() {
   it('renders toJSON', () => {
     const button = renderer.create(<Button a={1} />);
     expect(button.props == undefined).ok();
-    expect(button.toJSON()).toEqual({ type: 'button', props: {}, children: [ 'Nothing to do for now' ] });
+    expect(button.toJSON()).toEqual({ type: 'button', props: { a: 1 }, children: [ 'Nothing to do for now' ] });
   });
 }); // describe renders
 
@@ -75,10 +75,10 @@ describe('describe fireEvent.click', function() {
   });
 
   it('render container', () => {
-    const expandThumb = { more: 49 };
     const element = <h1>Hello, world</h1>;
     expect(isequal(element.props, { children: 'Hello, world' })).ok();
 
+    const expandThumb = { more: 49 };
     const { container } = render(<div {...expandThumb}/>);
     expect(container.tagName == "DIV").ok();
     expect(container._reactRootContainer != null).ok();
