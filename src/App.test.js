@@ -1,11 +1,27 @@
-import { render, fireEvent, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import ReactDOM from 'react-dom'
 import App from './App';
+import { render, fireEvent, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { Logger } from 'tslog';
+
+const log: Logger = new Logger({
+  displayDateTime: false,
+  dateTimeTimezone: "Asia/Seoul",
+  displayFunctionName: false,
+  fileLocation: false,
+  overwriteConsole: true,
+  displayFilePath: "hidden",
+  prettyInspectOptions: {
+    colors: true,
+    compact: true,
+  },
+  printLogMessageInNewLine: false,
+  // displayTypes: true,
+});
 
 function Button(props) {
-  // console.log("props: ", props); // props:  { a: 1 }
+  log.info("props: ", props); // props:  { a: 1 }
   return <button {...props}>Nothing to do for now</button>;
 }
 
@@ -91,7 +107,6 @@ describe('describe fireEvent.click', function() {
     expect(domNode.tagName == "DIV").ok();
   });
 }); // describe fireEvent.click
-
 
 describe('describe equals', function() {
   it('==, !=', () => {
