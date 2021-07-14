@@ -45,10 +45,10 @@ describe('describe renders', function() {
     try {
       const p = screen.getByText("하더놈", { exact: false });
     } catch (error) {
-      expect(error.name == "TestingLibraryElementError").toBe(true);
+      expect(error.name == "TestingLibraryElementError").ok();
       got_error = true
     }
-    expect(got_error).toBe(true);
+    expect(got_error).ok();
   });
 
   it('renders toJSON', () => {
@@ -84,10 +84,10 @@ describe('describe fireEvent.click', function() {
     const linkElement = screen.getByText("About");
     expect(linkElement).toBeInTheDocument();
     var items = await screen.findAllByText("About")
-    expect(1 == items.length).toBe(true);
+    expect(1 == items.length).ok();
     fireEvent.click(linkElement);
     var items = await screen.findAllByText("About")
-    expect(2 == items.length).toBe(true);
+    expect(2 == items.length).ok();
   });
 
   it('render container', () => {
@@ -110,8 +110,8 @@ describe('describe fireEvent.click', function() {
 
 describe('describe equals', function() {
   it('==, !=', () => {
-    expect(3 == 1+2).toBe(true);
-    expect(3 != 1).toBe(true);
+    expect(3 == 1+2).ok();
+    expect(3 != 1).ok();
   });
 }); // describe equals
 
@@ -134,7 +134,7 @@ function App2() {
 // https://reactjs.org/docs/jsx-in-depth.html
 describe('describe Spread Attributes', function() {
   it('spread operator ...', () => {
-    render(App1());
+    render(App2());
   });
 }); // describe Spread Attributes
 
