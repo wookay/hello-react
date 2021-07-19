@@ -5,6 +5,15 @@ import Menu from './components/Menu';
 import logo from './logo.svg';
 import './App.css';
 
+class 하더놈 extends Component {
+  render() {
+    return (
+        <p>
+          하더놈 <code>src/App.js</code> and save to reload.
+        </p>
+    );
+  }
+}
 
 class App extends Component {
   render() {
@@ -20,9 +29,7 @@ class App extends Component {
     </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          하더놈 <code>src/App.js</code> and save to reload.
-        </p>
+        <하더놈 />
         <a
           className="App-link"
           href="https://reactjs.org"
