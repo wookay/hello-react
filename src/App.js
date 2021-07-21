@@ -22,7 +22,7 @@ class 하더놈 extends Component {
     const isundef = prop3 == undefined;
     return (
         <div>
-          하더놈 - 
+          하더놈 -
           { tojson(prop1) }  <Comma />
           { tojson(prop2) }  <Comma />
           { tojson(isundef) }
@@ -31,7 +31,7 @@ class 하더놈 extends Component {
   }
 }
 
-하더놈.defaultProps = {  
+하더놈.defaultProps = {
     prop1: 100,
     prop2: [5,6,7],
     prop3: undefined
