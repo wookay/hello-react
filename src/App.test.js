@@ -21,7 +21,7 @@ const log: Logger = new Logger({
 });
 
 function Button(props) {
-  log.info("props: ", props); // props:  { a: 1 }
+  // log.info("props: ", props); // props:  { a: 1 }
   return <button {...props}>Nothing to do for now</button>;
 }
 
@@ -34,8 +34,8 @@ describe('describe renders', function() {
 
   it('renders 하더놈', () => {
     render(<BrowserRouter><App /></BrowserRouter>);
-    const p = screen.getByText("하더놈", { exact: false });
-    expect(p).toBeInTheDocument();
+    const nodes = screen.getAllByText("하더놈", { exact: false });
+    nodes.forEach(p => expect(p).toBeInTheDocument());
   });
 
   it('unmount', () => {
@@ -43,7 +43,7 @@ describe('describe renders', function() {
     unmount();
     var got_error = false
     try {
-      const p = screen.getByText("하더놈", { exact: false });
+      const p = screen.getAllByText("하더놈", { exact: false });
     } catch (error) {
       expect(error.name == "TestingLibraryElementError").ok();
       got_error = true
