@@ -113,6 +113,30 @@ describe('describe equals', function() {
     expect(3 == 1+2).ok();
     expect(3 != 1).ok();
   });
+
+  class A {
+  }
+  it('class', () => {
+    const a = new A();
+    expect(a instanceof A).ok();
+    expect(a instanceof Object).ok();
+    expect(a.constructor == A).ok();
+    expect(a.constructor.name == "A").ok();
+    expect(A.name == "A").ok();
+    expect(A.prototype.isPrototypeOf(a)).ok();
+
+    A.prototype.f = function (x) { return x+1; };
+    expect(a.f(2) == 3).ok();
+
+    A.prototype.f = undefined
+    expect(a.f == undefined).ok();
+
+    expect(A.constructor instanceof Function).ok();
+    expect(A.prototype.constructor == A).ok();
+    expect(A["prototype"] == A.prototype).ok();
+    expect(Number instanceof Function).ok();
+    expect(A instanceof Function).ok();
+  });
 }); // describe equals
 
 
