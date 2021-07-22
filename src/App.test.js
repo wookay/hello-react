@@ -137,6 +137,59 @@ describe('describe equals', function() {
     expect(Number instanceof Function).ok();
     expect(A instanceof Function).ok();
   });
+
+  // https://www.typescriptlang.org/docs/handbook/advanced-types.html
+  it('Advanced Types', () => {
+    const a: (number | string) = 1;
+    const b: (number | string) = "hi";
+    const c: null = null;
+    const arr: (number | string)[] = [1, "hi"];
+    expect(a == 1).ok();
+    expect(b == "hi").ok();
+    expect(arr[1] == "hi").ok();
+
+    var aOrNull: (string | null) = "hi";
+    expect(aOrNull == "hi").ok();
+    aOrNull = null;
+    expect(aOrNull == null).ok();
+  });
+
+  it('crazy js', () => {
+     expect(5 == [5]).ok();
+     expect(5 == "5").ok();
+     expect("5" == [5]).ok();
+     expect(!isequal(5, [5])).ok();
+     expect(!isequal(5, "5")).ok();
+     expect(!isequal("5", [5])).ok();
+     expect(void 0 == undefined).ok();
+  });
+
+  // https://stackoverflow.com/questions/16672743/javascript-null-check
+  it('crazy if', () => {
+     expect( (true      ? true : false)).ok();
+     expect(!(false     ? true : false)).ok();
+     expect( (1         ? true : false)).ok();
+     expect(!(0         ? true : false)).ok();
+     expect( (-1        ? true : false)).ok();
+     expect( ("true"    ? true : false)).ok();
+     expect( ("false"   ? true : false)).ok();
+     expect( ("false"   ? true : false)).ok();
+     expect( ("false"   ? true : false)).ok();
+     expect( ("1"       ? true : false)).ok();
+     expect( ("0"       ? true : false)).ok();
+     expect( ("-1"      ? true : false)).ok();
+     expect(!(""        ? true : false)).ok();
+     expect(!(null      ? true : false)).ok();
+     expect(!(undefined ? true : false)).ok();
+     expect( (Infinity  ? true : false)).ok();
+     expect( (-Infinity ? true : false)).ok();
+     expect( ([]        ? true : false)).ok();
+     expect( ({}        ? true : false)).ok();
+     expect( ([[]]      ? true : false)).ok();
+     expect( ([0]       ? true : false)).ok();
+     expect( ([1]       ? true : false)).ok();
+     expect(!(NaN       ? true : false)).ok();
+  });
 }); // describe equals
 
 
